@@ -1,0 +1,46 @@
+#ideabank-home {
+
+    .wrapper {
+
+        .nav-section {
+            padding:23px 53px;
+            border-bottom:1px solid #D1D5DB;
+            .navbar {
+                // border: 1px solid;
+
+                .nav-logo {
+                    display: flex;
+                    align-items: center;
+
+                    .logo-img {
+                        padding-right: 14px;
+                    }
+                }
+
+                .nav-content {
+                    display: flex;
+                    align-items: center;
+
+                    .content1 {
+                        padding-right: 63px;
+
+                        a{
+                            text-decoration: none;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .nav-img {
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-end;
+
+                    img {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}

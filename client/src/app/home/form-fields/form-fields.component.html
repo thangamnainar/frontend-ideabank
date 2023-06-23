@@ -1,0 +1,50 @@
+<section id="form-fields-page">
+    <div class="wrapper">
+        <div class="grid">
+            <div class="col-12">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="form">
+                            <form action="" [formGroup]="formFields">
+                                <div class="form-Group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" placeholder="Enter" pInputText class="ng-invalid ng-dirty "
+                                        formControlName="name" />
+                                    <div
+                                        *ngIf="formFields.controls['name'].invalid && formFields.controls['name'].touched || formFields.controls['name'].dirty">
+                                        <span style="color: red;"
+                                            *ngIf="formFields.controls['name'].errors?.['required']">required* </span>
+                                        <span style="color: red;"
+                                            *ngIf="formFields.controls['name'].errors?.['minlength']">Name must be at
+                                            least 3 characters long</span>
+                                    </div>
+                                </div>
+                                <div class="form-Group">
+                                    <div *ngFor="let genders of gender">
+                                        <p-radioButton [inputId]="genders.id" name="gender" [value]="genders.id"
+                                            formControlName="gender"></p-radioButton>
+                                        <label [for]="genders.id" class="ml-2">{{ genders.genderName }}</label>
+                                    </div>
+                                </div>
+                                <div class="form-Group">
+                                    <div class="calender">
+                                        <p-calendar name="date" formControlName="date" placeholder="MM/DD/YYYY"></p-calendar>
+                                    </div>
+                                </div>
+                                <div class="form-Group">
+                                    <p-dropdown [options]="cities" formControlName="selectedCity"
+                                        placeholder="Select a City" [editable]="true" optionLabel="districtName"></p-dropdown>
+                                </div>
+                                <div class="form-Group">
+                                    <button pButton pRipple (click)="getData()" label="Submit"
+                                        class="p-button-success"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

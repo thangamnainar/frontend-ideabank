@@ -1,0 +1,37 @@
+<section id="table-page">
+    <div class="grid wrapper">
+        <div class="col-12 table-wrap">
+            <div class="button-field">
+                <div class="search-box">
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input type="text" pInputText placeholder="Search" [(ngModel)]="searchQuery"
+                            (input)="onSearch()">
+                    </span>
+                </div>
+                <div class="add-button">
+                   <a routerLink="/home/addForm"> <p-button  label="+ Add Employee"></p-button></a>
+                </div>
+            </div>
+            <div class="table">
+                <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-product>
+                        <tr>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.userName }}</td>
+                            <td>{{ product.email }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+</section>

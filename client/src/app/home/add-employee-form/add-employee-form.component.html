@@ -1,0 +1,70 @@
+<section id="addemp-page">
+    <div class="grid wrapper">
+        <div class="col-12">
+            <div class="headings">
+                <div class="head1">
+                    Add Employee
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="grid">
+                    <div class="col-8">
+                        <div class="grid">
+                            <div class="col-5 side1">
+                                <div class="form">
+                                    <form action="" [formGroup]="formFields">
+                                        <div class="form-Group">
+                                            <label for="name">Name *</label>
+                                            <input type="text" placeholder="Enter" pInputText formControlName="name" />
+                                            <div *ngIf="formFields.controls['name'].invalid && formFields.controls['name'].touched || formFields.controls['name'].dirty" >
+                                                <span style="color: red;" *ngIf="formFields.controls['name'].errors?.['required']">required* </span>
+                                                <span style="color: red;" *ngIf="formFields.controls['name'].errors?.['minlength']">Name must be at least 3 characters long</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-Group">
+                                            <label for="email">Email</label>
+                                            <input type="text" placeholder="Enter"  pInputText formControlName="email" />
+                                            <div *ngIf="formFields.controls['email'].invalid && formFields.controls['email'].touched || formFields.controls['email'].dirty">
+                                                <span style="color: red;" *ngIf="formFields.controls['email'].errors?.['required']">required *</span>
+                                                <span style="color: red;" *ngIf="formFields.controls['email'].errors?.['minlength']">Enter email format </span>
+                                                <span style="color: red;" *ngIf="formFields.controls['email'].errors?.['pattern']">Enter email format....................</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-Group">
+                                            <div class="head">If Management Person</div>
+                                            <div class="radio-button">
+                                                <p-radioButton inputId="Yes" value="Yes" name="yesOrno"
+                                                    formControlName="yesOrno"></p-radioButton>
+                                                <label for="Yes">Yes</label>
+                                                <p-radioButton inputId="No" value="No" name="yesOrno"
+                                                    formControlName="yesOrno"></p-radioButton>
+                                                <label for="Yes">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-buttons">
+                                            <div class="add-btn">
+                                                <p-button label="Add Employee"></p-button>
+                                            </div>
+                                            <div class="cancel-btn">
+                                                <p-button label="Cancel"></p-button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-7 side2">
+                                <form action="" [formGroup]="formFields">
+                                    <div class="form-Group">
+                                        <label for="email">Employee Code</label>
+                                        <input type="text" placeholder="Enter" pInputText formControlName="email" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

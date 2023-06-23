@@ -1,0 +1,102 @@
+#addemp-page {
+    .wrapper {
+        padding: 25px 53px;
+
+        .headings {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            padding-bottom: 35px;
+        }
+
+        .form-field {
+
+            .side1 {
+
+                .form {
+
+                    .form-Group {
+                        display: flex;
+                        flex-direction: column;
+                        padding-bottom: 24px;
+
+                        label {
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 16px;
+                            padding-bottom: 10px;
+                        }
+
+                        input {
+                            width: 65%;
+                            height: 30px;
+                            border-radius: 5px;
+                            border: 1px solid #D1D5DB;
+                            padding: 5px;
+
+                            &.ng-invalid.ng-dirty.ng-touched {
+                                border: 1px solid red !important;
+                            }                            
+                        }
+
+                        .radio-button {
+                            padding-top: 10px;
+
+                            .p-radiobutton {
+                                padding-right: 20px;
+                            }
+
+                            label {
+                                padding-left: 10px;
+                                padding-right: 40px;
+                            }
+                        }
+                    }
+
+                    .form-buttons {
+                        display: flex;
+                        padding-top: 51px;
+
+                        .cancel-btn {
+                            padding-left: 20px;
+
+                        }
+                    }
+                }
+            }
+
+            .side2 {
+                border: 2px solid blue($color: #000000);
+
+                .form-Group {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 16px;
+                        padding-bottom: 10px;
+                    }
+
+                    input {
+                        width: 65%;
+                        height: 30px;
+                        border-radius: 5px;
+                        border: 1px solid #D1D5DB;
+                        padding: 5px;
+
+                        // &.ng-invalid.ng-dirty.ng-touched {
+                        //     // border: 1px solid red !important;
+                        // }  
+
+                        // &.ng-valid.ng-dirty.ng-touched {
+                        //     border: 1px solid black !important;
+                        // }
+
+                        &.ng-valid.ng-touched,&.ng-valid.ng-dirty{
+                            border: 1px solid black !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

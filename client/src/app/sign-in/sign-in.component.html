@@ -1,0 +1,60 @@
+<section id="singIn">
+    <div class="wrapper">
+        <div class="grid whole-grid">
+            <div class="col-7 box1">
+                <img src="../assets/ideabank.svg" alt="loading..">
+            </div>
+            <div class="col-5 box2">
+                <div class="form-box">
+                    <div class="heading">
+                        <img src="../assets/Vector.svg" alt=""> <img src="../assets/ideaFont.svg" alt="">
+                    </div>
+                    <div class="SignIn">
+                        <span>Sign in</span>
+                    </div>
+                    <div class="form-filed">
+                        <form [formGroup]="form" action="">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="ng-invalid ng-dirty" pInputText formControlName="email" name="email"
+                                    placeholder="Enter " />
+                                <div
+                                    *ngIf="form.controls['email'].invalid && form.controls['email'].touched || form.controls['email'].dirty">
+                                    <span style="color: red;"
+                                        *ngIf="form.controls['email'].errors?.['required']">email is required</span>
+                                    <span style="color: red;"
+                                        *ngIf="form.controls['email'].errors?.['minlength']">Name must be at least 3
+                                        characters long
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-pass-field">
+                                <label for="password">Password</label>
+                                <input type="password" class="ng-invalid ng-dirty" pInputText formControlName="password" name="password"
+                                    placeholder="Enter " />
+                                <div
+                                    *ngIf="form.controls['password'].invalid && form.controls['password'].touched || form.controls['password'].dirty">
+                                    <span style="color: red;"
+                                        *ngIf="form.controls['password'].errors?.['required']">Password is
+                                        required</span>
+                                    <span style="color: red;"
+                                        *ngIf="form.controls['password'].errors?.['minlength']">Password must be at
+                                        least 6
+                                        characters long
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="forgot-pass">
+                                <span><a routerLink="/forgot-email"> Forgot Password ?</a></span>
+                            </div>
+                            <div class="form-group submit-button">
+                                <button pButton pRipple (click)="getLoginData()" label="Sign In"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+#table-page {
+
+    .wrapper {
+        padding: 0 53px;
+
+        .table-wrap {
+            padding-top: 35px;
+
+            .button-field {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding-bottom: 35px;
+
+                .search-box {
+                    padding-right: 40px;
+
+                    input {
+                        height: 30px;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
