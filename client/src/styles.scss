@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+*body{
+    margin: 0 !important;
+    padding: 0 !important;
+    // box-sizing: border-box;
+}
+
+//sign-in.component.scss
+
+.p-password {
+    display: block;
+    width: 375.47px;
+    margin-top: 7px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+  }
+
+  .p-inputtext.ng-valid.ng-dirty.ng-touched {
+    border: 1px solid black !important;
+  }
+
+  //table.component.scss
+
+  .p-button{
+    height: 40px;
+}
+
+//ideabank.component.scss
+
+.cancel-btn{
+  padding-left:20px ;
+
+  .p-button{
+    background: white;
+    border:1px solid #64748B;
+    color:#64748B;
+  }
+}

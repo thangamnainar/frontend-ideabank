@@ -28,9 +28,11 @@ export class VerifyOtpComponent implements OnInit{
    if(this.formFieldGroup.valid){
     this.service.verify(this.formFieldGroup.value.verifyotp,this.email).subscribe({
       next:(response)=>{
-        console.log(response);        
-        this.show('success',response.message)
+        console.log(response);   
+        if(response.status){
         this.router.navigate(['signIn']);
+        this.show('success',response.message)
+        }     
       },error:(error:HttpErrorResponse)=>{
         console.log(error);
        this.show('error',error.error.message)

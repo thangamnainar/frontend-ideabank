@@ -54,7 +54,7 @@ export class ServiceService {
     return this.http.put<any>(Url, {email:email});
   }
 
-  // search
+  // search table
 
   getUsers(){
     const Url = 'http://localhost:3000/user/getall';
@@ -79,6 +79,13 @@ export class ServiceService {
 
   getDistrict(){
     const Url = 'http://localhost:3000/user/getDistrict';
+    return this.http.get<any>(Url);
+  }
+
+  // get from formtable table
+
+  getFormTable(){
+    const Url = 'http://localhost:3000/user/getFormFields';
     return this.http.get<any>(Url);
   }
 }

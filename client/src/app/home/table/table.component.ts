@@ -52,7 +52,7 @@ export class TableComponent {
   products: any;
 
   getAllData() {
-    this.service.getUsers().subscribe({
+    this.service.getFormTable().subscribe({
       next: (response) => {
         this.products = response.data;
         console.log(response, 'response');
