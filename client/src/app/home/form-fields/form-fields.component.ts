@@ -15,7 +15,7 @@ export class FormFieldsComponent implements OnInit{
   constructor(private service: ServiceService) { }
 
   formFields = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    userName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     gender: new FormControl('', [Validators.required]),
     date: new FormControl('', [Validators.required]),
     selectedCity: new FormControl('', [Validators.required]),
@@ -44,6 +44,13 @@ export class FormFieldsComponent implements OnInit{
     }
 
   getData(){
+    this.service.createFormTable(this.formFields.value).subscribe({
+      next: (response) => {
+        console.log(response, 'response......');
+      }, error: (error) => {
+        console.log(error);
+      }
+    })
     console.log(this.formFields.value);
     
   }

@@ -11,8 +11,12 @@ import { Subject } from 'rxjs';
 })
 export class TableComponent {
 
+  // selectedData: any[] = [];
+  multipleCheck = false;  
+  deleteButton = false;
   searchQuery: string = '';
   userQuestionUpdate: Subject<string> = new Subject<string>();
+  checkbox = new FormControl(false);
 
 
   constructor(private service: ServiceService) {
@@ -25,6 +29,8 @@ export class TableComponent {
       });
 
   }
+
+
 
   onSearch() {
     this.userQuestionUpdate.next(this.searchQuery);
@@ -55,12 +61,26 @@ export class TableComponent {
     this.service.getFormTable().subscribe({
       next: (response) => {
         this.products = response.data;
-        console.log(response, 'response');
+        console.log(response, 'response......');
       }, error: (error) => {
         console.log(error);
       }
     })
   }
 
-}
+  selectAll(event:any) {
+    console.log('eventttttttttt',event.length);
+    if (event.length == 1) {
+      this.multipleCheck =true;
+      this.deleteButton = true;
+      // console.log(this.multipleCheck, 'this.multipleCheck');
+    }else{
+      console.log('else');
+      this.multipleCheck = false
+      this.deleteButton = true;
+    }
+    }
+  }
+
+
 

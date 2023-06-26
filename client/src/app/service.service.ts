@@ -88,4 +88,12 @@ export class ServiceService {
     const Url = 'http://localhost:3000/user/getFormFields';
     return this.http.get<any>(Url);
   }
+
+  // create from formtable table
+
+  createFormTable(data:any){
+    const Url = 'http://localhost:3000/user/addUser';
+    return this.http.post<any>(Url,data);
+  }
+
 }

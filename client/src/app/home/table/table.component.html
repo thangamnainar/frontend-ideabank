@@ -2,6 +2,15 @@
     <div class="grid wrapper">
         <div class="col-12 table-wrap">
             <div class="button-field">
+                <div [ngClass]="multipleCheck ? 'edit-button':'hide-edit-btn'">
+                    <p-button label="Edit"></p-button>
+                </div>
+                <div [ngClass]="deleteButton ? 'delete-button':'hide-delete-button'">
+                    <p-button label="Delete"></p-button>
+                </div>
+                <div class="total-emp">
+                    <span>Total Employees: {{ products?.length }}</span>
+                </div>
                 <div class="search-box">
                     <span class="p-input-icon-left ml-auto">
                         <i class="pi pi-search"></i>
@@ -14,21 +23,29 @@
                 </div>
             </div>
             <div class="table">
-                <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                <p-table [value]="products" (selectionChange)="selectAll($event)"
+                    [tableStyle]="{ 'min-width': '50rem' }">
                     <ng-template pTemplate="header">
                         <tr>
+                            <th style="width: 4rem">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+
                             <th>ID</th>
                             <th>Name</th>
                             <th>Gender</th>
                             <th>District</th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-product>
+                    <ng-template pTemplate="body" let-product let-rowIndex="rowIndex">
                         <tr>
+                            <td>
+                                <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                            </td>
                             <td>{{ product.id }}</td>
                             <td>{{ product.userName }}</td>
                             <td>{{ product.gender }}</td>
-                            <th>{{ product.district }}</th>
+                            <td>{{ product.district }}</td>
                         </tr>
                     </ng-template>
                 </p-table>
