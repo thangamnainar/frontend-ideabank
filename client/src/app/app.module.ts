@@ -19,6 +19,12 @@ import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
 import { ForgotOtpComponent } from './forgot-otp/forgot-otp.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
+// push Notification
+
+import { environment } from "src/environments/environment";
+import { initializeApp } from "firebase/app";
+
+initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
