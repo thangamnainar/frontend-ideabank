@@ -55,7 +55,7 @@ export class TableComponent {
     // Perform your search logic using the value
   }
 
-  products: any;
+  products: any;  
 
   getAllData() {
     this.service.getFormTable().subscribe({
